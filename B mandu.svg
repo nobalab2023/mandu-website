@@ -1,13 +1,13 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1080.000000pt" height="1080.000000pt" viewBox="0 0 1080.000000 1080.000000"
- preserveAspectRatio="xMidYMid meet">
-
-<g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M0 5400 l0 -5400 5400 0 5400 0 0 5400 0 5400 -5400 0 -5400 0 0
--5400z"/>
-</g>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MANDU logo">
+  <defs>
+    <!-- 좌->우 보라→핑크→바이올렛 그라데이션 -->
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#A020F0"/>
+      <stop offset="50%" stop-color="#D34BD6"/>
+      <stop offset="100%" stop-color="#6F39FF"/>
+    </linearGradient>
+  </defs>
+  <!-- 배경은 투명. 아래 path만 색이 들어갑니다 -->
+  <path fill="url(#g)"
+        d="M96 352 L140 160 H224 L256 236 L324 160 H412 L372 352 Z"/>
 </svg>
