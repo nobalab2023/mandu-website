@@ -2,179 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MANDU Token Whitepaper | NOVA LAB</title>
-  <meta name="description" content="MANDU is a utility token by NOVA LAB, built on BNB Smart Chain for real-world payments, rewards, and ecosystem integration." />
-  <link rel="icon" href="mandu.svg" type="image/svg+xml" />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              from: "#9333EA",
-              via: "#DB2777",
-              to: "#F59E0B",
-            }
-          },
-          fontFamily: { sans: ["Inter", "ui-sans-serif"] }
-        }
-      }
-    }
-  </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MANDU — Public Whitepaper</title>
+  <meta name="description" content="Public whitepaper for MANDU (BEP-20) by NOVA LAB. Scope, token design and roadmap." />
+  <link rel="canonical" href="https://www.nobalab2023.com/whitepaper.html" />
+  <link rel="icon" href="/mandu.png" type="image/png" />
   <style>
-    html { scroll-behavior: smooth; }
-    body {
-      background: radial-gradient(circle at 30% 30%, rgba(80,0,150,0.2), transparent 40%),
-                  radial-gradient(circle at 70% 70%, rgba(255,80,120,0.15), transparent 40%),
-                  #0b0b0b;
-      color: #f3f3f3;
-      font-family: 'Inter', sans-serif;
-    }
-    .glass {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-    }
+    body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:#0b0b0c;color:#f4f4ff}
+    .wrap{max-width:920px;margin:auto;padding:32px 20px}
+    h1{font-size:34px;margin:0 0 8px;background:linear-gradient(90deg,#a020f0,#ff7a18);-webkit-background-clip:text;background-clip:text;color:transparent}
+    h2{margin:28px 0 8px;font-size:22px}
+    p,li{color:#cfd0de;line-height:1.65}
+    code{background:#151519;border:1px solid rgba(255,255,255,.08);padding:2px 6px;border-radius:6px}
+    a{color:#caa6ff}
+    .box{border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(20,20,24,.75), rgba(17,17,21,.65));border-radius:14px;padding:16px;margin:16px 0}
+    .btn{display:inline-block;margin-top:10px;background:linear-gradient(90deg,#a020f0,#ff7a18);color:#111;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+    small{color:#9aa0b4}
   </style>
 </head>
+<body>
+  <div class="wrap">
+    <h1>MANDU — Public Whitepaper</h1>
+    <p><b>Project:</b> MANDU (BEP-20) · <b>Developer:</b> NOVA LAB · <b>Website:</b> <a href="https://www.nobalab2023.com/">nobalab2023.com</a> · <b>Contact:</b> <a href="mailto:contact@nobalab2023.com">contact@nobalab2023.com</a></p>
+    <div class="box"><b>Contract Address:</b> <code>0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036</code></div>
 
-<body class="min-h-screen">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 glass">
-    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-      <div class="flex items-center gap-2">
-        <img src="mandu.svg" alt="MANDU" class="h-7 w-7" />
-        <span class="font-semibold text-lg tracking-wide">MANDU</span>
-      </div>
-      <a href="https://nobalab2023.github.io/mandu-website" class="text-sm hover:text-brand-via">← Back to Main</a>
+    <h2>1. Scope</h2>
+    <p>MANDU is a utility token on BNB Smart Chain intended for payments and rewards within NOVA LAB’s products. Integration to UB Pay (biometric payment) and Mandu Messenger is planned. This document describes purpose, token design, and a high-level roadmap.</p>
+
+    <h2>2. Token Design</h2>
+    <ul>
+      <li><b>Standard:</b> BEP-20</li>
+      <li><b>Total Supply:</b> 80,000,000</li>
+      <li><b>Symbol:</b> MANDU</li>
+      <li><b>Primary Utility:</b> payments, in-app purchases, loyalty rewards, merchant programs</li>
+    </ul>
+
+    <h2>3. Utility & Usage</h2>
+    <ul>
+      <li>Payment and transfer functions via UB Pay (under development)</li>
+      <li>In-app balances, purchases and rewards in Mandu Messenger (under development)</li>
+      <li>Partner merchant programs and community incentives</li>
+    </ul>
+    <small>No financial returns are promised. MANDU is intended for product utility only.</small>
+
+    <h2>4. Roadmap (High-Level)</h2>
+    <ul>
+      <li><b>Q4 2025:</b> Token info verification, website/whitepaper release, initial listings</li>
+      <li><b>Q1–Q2 2026:</b> UB Pay pilot, Mandu Messenger wallet UI, merchant test</li>
+      <li><b>Q3–Q4 2026:</b> Payment/reward features expansion, ecosystem partners</li>
+    </ul>
+
+    <h2>5. Governance & Compliance</h2>
+    <p>The project maintains neutral, verifiable public information. Claims of performance or guaranteed returns are not made. Compliance requirements may evolve by jurisdiction and will be assessed as integrations progress.</p>
+
+    <h2>6. Links</h2>
+    <ul>
+      <li>Website: <a href="https://www.nobalab2023.com/">https://www.nobalab2023.com/</a></li>
+      <li>BscScan: <a href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036">Token page</a></li>
+      <li>Repository: <a href="https://github.com/nobalab2023/mandu-website">GitHub</a></li>
+      <li>Twitter: <a href="https://x.com/MANDUCOINBNB">@MANDUCOINBNB</a></li>
+    </ul>
+
+    <div class="box">
+      <b>PDF Version</b>
+      <p>For submissions, a static PDF is often requested. After exporting, upload as <code>/whitepaper.pdf</code> and link it below.</p>
+      <a class="btn" href="/whitepaper.pdf">Download PDF</a>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-r from-brand-from via-brand-via to-brand-to bg-clip-text text-transparent">
-    <h1 class="text-5xl md:text-6xl font-extrabold">MANDU Token Whitepaper</h1>
-    <p class="mt-4 text-zinc-400">Version 1.0 • October 2025</p>
-  </section>
-
-  <!-- Content -->
-  <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
-    <section>
-      <h2 class="text-3xl font-bold mb-3">1. Introduction</h2>
-      <p class="text-zinc-300 leading-relaxed">
-        MANDU is a utility token built on the BNB Smart Chain (BEP-20), developed by NOVA LAB.  
-        It powers a real-world payment and reward ecosystem across digital and physical services such as UB Pay and Mandu Messenger.  
-        Our mission is to make digital transactions as easy and rewarding as sharing dumplings — simple, inclusive, and borderless.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">2. Background & Problem</h2>
-      <p class="text-zinc-300 leading-relaxed">
-        Centralized point systems limit user freedom, while most digital payment platforms lack interoperability.  
-        MANDU introduces a decentralized alternative — a utility token that connects users, merchants, and communities through blockchain transparency and liquidity.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">3. Token Overview</h2>
-      <div class="glass rounded-2xl p-6 text-zinc-200 text-sm">
-        <ul class="space-y-2">
-          <li><strong>Name:</strong> MANDU</li>
-          <li><strong>Symbol:</strong> MANDU</li>
-          <li><strong>Standard:</strong> BEP-20</li>
-          <li><strong>Chain:</strong> BNB Smart Chain</li>
-          <li><strong>Contract Address:</strong> 0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036</li>
-          <li><strong>Total Supply:</strong> 80,000,000 MANDU</li>
-          <li><strong>Decimals:</strong> 18</li>
-          <li><strong>Audit:</strong> Scheduled for Q1 2026</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">4. Use Cases</h2>
-      <ul class="list-disc ml-6 text-zinc-300 space-y-2">
-        <li>Payments and transfers via UB Pay</li>
-        <li>In-app purchases, gifts, and rewards in Mandu Messenger</li>
-        <li>Merchant loyalty programs and community rewards</li>
-        <li>Discounts and benefits for partnered stores</li>
-        <li>Future integration with NFT and DAO models</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">5. Tokenomics</h2>
-      <table class="w-full text-sm text-zinc-300 border border-white/10 rounded-2xl overflow-hidden">
-        <thead class="bg-white/10">
-          <tr>
-            <th class="p-2 text-left">Category</th>
-            <th class="p-2 text-left">Allocation</th>
-            <th class="p-2 text-left">Lockup/Vesting</th>
-            <th class="p-2 text-left">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="p-2">Liquidity Pool</td><td class="p-2">25%</td><td class="p-2">12 months</td><td class="p-2">Exchange liquidity</td></tr>
-          <tr><td class="p-2">Reserve</td><td class="p-2">25%</td><td class="p-2">24 months</td><td class="p-2">Future expansion</td></tr>
-          <tr><td class="p-2">Team & Dev</td><td class="p-2">20%</td><td class="p-2">18 months</td><td class="p-2">Founders, developers</td></tr>
-          <tr><td class="p-2">Marketing</td><td class="p-2">15%</td><td class="p-2">Gradual</td><td class="p-2">Promotions, listings</td></tr>
-          <tr><td class="p-2">Community</td><td class="p-2">10%</td><td class="p-2">None</td><td class="p-2">Rewards, airdrops</td></tr>
-          <tr><td class="p-2">Partnership</td><td class="p-2">5%</td><td class="p-2">Flexible</td><td class="p-2">Strategic alliances</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">6. Roadmap</h2>
-      <ol class="space-y-3 list-decimal ml-6 text-zinc-300">
-        <li><strong>Q4 2025:</strong> Token launch, BscScan verification, initial marketing</li>
-        <li><strong>Q1 2026:</strong> UB Pay and Mandu Messenger integration</li>
-        <li><strong>Q2 2026:</strong> Partnerships and merchant adoption</li>
-        <li><strong>Q3 2026:</strong> DAO and governance model</li>
-        <li><strong>Beyond:</strong> Multi-chain expansion</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">7. Security & Compliance</h2>
-      <p class="text-zinc-300 leading-relaxed">
-        MANDU’s contract is verified on <a href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" class="underline hover:text-brand-via">BscScan</a>.  
-        Audit by an external firm is planned for Q1 2026. Treasury funds and reserves are managed via multi-signature wallets.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">8. Official Links</h2>
-      <ul class="text-zinc-300 space-y-2">
-        <li>🌐 Website: <a href="https://nobalab2023.github.io/mandu-website" class="underline hover:text-brand-via">https://nobalab2023.github.io/mandu-website</a></li>
-        <li>🐦 Twitter: <a href="https://x.com/MANDUCOINBNB" class="underline hover:text-brand-via">@MANDUCOINBNB</a></li>
-        <li>💼 GitHub: <a href="https://github.com/nobalab2023" class="underline hover:text-brand-via">NOVA LAB GitHub</a></li>
-        <li>📧 Email: <a href="mailto:novalab2023@gmail.com" class="underline hover:text-brand-via">novalab2023@gmail.com</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-bold mb-3">9. Disclaimer</h2>
-      <p class="text-zinc-400 leading-relaxed text-sm">
-        This document is for informational purposes only and does not constitute investment advice or solicitation.  
-        MANDU is a utility token for use within the NOVA LAB ecosystem. Users should comply with local regulations.
-      </p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-6 text-center text-zinc-500 text-sm">
-    © <span id="year"></span> NOVA LAB • Built with ❤️ in Tokyo
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  </div>
 </body>
 </html>
-
