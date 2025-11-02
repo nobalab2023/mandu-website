@@ -4,127 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MANDU Token | NOVA LAB</title>
-  <meta name="description" content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Simple, inclusive, borderless payments with UB Pay and Mandu Messenger." />
+  <meta name="description" content="MANDU is a BEP-20 utility token developed by NOVA LAB on BNB Smart Chain. Focused on real-world payments and rewards with planned integration to UB Pay and Mandu Messenger." />
+  <link rel="canonical" href="https://www.nobalab2023.com/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="MANDU Token | NOVA LAB" />
-  <meta property="og:description" content="Utility token for real-world payments and rewards." />
+  <meta property="og:description" content="BEP-20 utility token on BNB Smart Chain. Public information, contract and links." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nobalab2023.github.io/mandu-website/" />
-  <meta property="og:image" content="https://nobalab2023.github.io/mandu-website/mandu.png" />
+  <meta property="og:url" content="https://www.nobalab2023.com/" />
+  <meta property="og:image" content="https://www.nobalab2023.com/mandu.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MANDUCOINBNB" />
+  <meta name="twitter:title" content="MANDU Token | NOVA LAB" />
+  <meta name="twitter:description" content="BEP-20 utility token on BNB Smart Chain. Public information, contract and links." />
+  <meta name="twitter:image" content="https://www.nobalab2023.com/mandu.png" />
+
+  <!-- Favicon (원하면 교체) -->
+  <link rel="icon" href="/mandu.png" type="image/png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
+  <!-- Organization schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"NOVA LAB",
+    "url":"https://www.nobalab2023.com/",
+    "logo":"https://www.nobalab2023.com/mandu.png",
+    "sameAs":[
+      "https://x.com/MANDUCOINBNB",
+      "https://github.com/nobalab2023/mandu-website"
+    ],
+    "email":"contact@nobalab2023.com"
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#0b0b0c;
-      --card:#141418;
-      --muted:#b6b6c6;
-      --text:#f4f4ff;
-      --accent1:#a020f0; /* purple */
-      --accent2:#ff7a18; /* orange */
-      --accent3:#6f39ff; /* violet */
-      --border:rgba(255,255,255,.08);
-      --shadow:0 8px 30px rgba(0,0,0,.45);
-      --radius:16px;
-      --grad: linear-gradient(90deg, #a020f0 0%, #d34bd6 35%, #ff7a18 80%);
+      --bg:#0b0b0c; --card:#141418; --muted:#b6b6c6; --text:#f4f4ff;
+      --accent1:#a020f0; --accent2:#ff7a18; --border:rgba(255,255,255,.08);
+      --shadow:0 8px 30px rgba(0,0,0,.45); --radius:16px;
+      --grad:linear-gradient(90deg,#a020f0 0%,#d34bd6 35%,#ff7a18 80%);
       --hero-grad: radial-gradient(1200px 600px at 10% 0%, rgba(160,32,240,.25), transparent 65%),
                    radial-gradient(800px 500px at 90% 10%, rgba(255,122,24,.15), transparent 60%),
                    radial-gradient(900px 600px at 50% 100%, rgba(111,57,255,.12), transparent 60%);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,Arial,Helvetica,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      letter-spacing:.1px;
-    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);letter-spacing:.1px}
 
-    /* === Header / Nav === */
-    .nav{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter:saturate(120%) blur(8px);
-      background:rgba(10,10,12,.55);
-      border-bottom:1px solid var(--border);
-    }
-    .nav-inner{
-      max-width:1200px; margin:auto; padding:12px 20px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.4px}
-    .brand img{width:32px; height:32px; filter:drop-shadow(0 0 10px rgba(160,32,240,.35))}
-    .brand span{font-weight:800}
-    .menu{display:flex; gap:20px; align-items:center; font-weight:600}
-    .menu a{color:var(--muted); text-decoration:none}
+    .nav{position:sticky;top:0;z-index:20;backdrop-filter:saturate(120%) blur(8px);background:rgba(10,10,12,.55);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:32px;height:32px}
+    .brand span{font-weight:800;letter-spacing:.4px}
+    .menu{display:flex;gap:20px;align-items:center;font-weight:600}
+    .menu a{color:var(--muted);text-decoration:none}
     .menu a:hover{color:#fff}
 
-    /* === Hero === */
-    .hero{
-      position:relative; overflow:hidden;
-      padding:90px 20px 40px;
-      background:var(--hero-grad);
-    }
-    .container{max-width:1200px; margin:auto}
-    .title{
-      font-size:clamp(34px, 6vw, 64px);
-      line-height:1.08; margin:10px 0 14px; font-weight:800;
-      background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
-      letter-spacing:.4px;
-      text-wrap:balance;
-    }
-    .subtitle{
-      color:var(--muted); font-weight:500; margin-bottom:28px;
-    }
-    .cta{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{
-      appearance:none; border:none; cursor:pointer; text-decoration:none;
-      color:#0c0c10; font-weight:700; padding:12px 18px; border-radius:14px; box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-    }
-    .btn:hover{transform:translateY(-2px); box-shadow:0 12px 36px rgba(0,0,0,.52)}
-    .btn:active{transform:translateY(0)}
-    .btn-grad{background:var(--grad); color:#111}
-    .btn-ghost{
-      color:#fff; background:transparent; border:1px solid var(--border);
-    }
+    .hero{position:relative;overflow:hidden;padding:90px 20px 40px;background:var(--hero-grad)}
+    .container{max-width:1200px;margin:auto}
+    .title{font-size:clamp(34px,6vw,64px);line-height:1.08;margin:10px 0 14px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.4px}
+    .subtitle{color:var(--muted);font-weight:500;margin-bottom:28px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid transparent;cursor:pointer;text-decoration:none;color:#0c0c10;font-weight:700;padding:12px 18px;border-radius:14px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .15s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.52)}
+    .btn-grad{background:var(--grad);color:#111}
+    .btn-ghost{color:#fff;background:transparent;border-color:var(--border)}
 
-    /* === Cards / Sections === */
     .section{padding:26px 20px}
-    .card{
-      background:linear-gradient(180deg, rgba(20,20,24,.75), rgba(17,17,21,.65));
-      border:1px solid var(--border); border-radius:var(--radius); padding:22px 22px;
-      box-shadow:var(--shadow);
-    }
-    .grid{display:grid; gap:18px}
+    .card{background:linear-gradient(180deg, rgba(20,20,24,.75), rgba(17,17,21,.65));border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:18px}
     @media(min-width:900px){ .grid-2{grid-template-columns:1fr 1fr} }
-    h2{margin:0 0 12px; font-size:22px}
-    ul{margin:10px 0 0 18px}
-    li{margin:6px 0}
-    a.link{color:#caa6ff; text-decoration:none}
-    a.link:hover{text-decoration:underline}
-
-    /* === Footer === */
-    footer{
-      border-top:1px solid var(--border);
-      color:var(--muted); font-size:14px; padding:26px 20px; margin-top:26px;
-      background:linear-gradient(180deg, rgba(160,32,240,.05), transparent 35%);
-    }
-
-    /* small helper for section anchors */
+    h2{margin:0 0 12px;font-size:22px}
+    ul{margin:10px 0 0 18px} li{margin:6px 0}
+    a.link{color:#caa6ff;text-decoration:none} a.link:hover{text-decoration:underline}
+    footer{border-top:1px solid var(--border);color:var(--muted);font-size:14px;padding:26px 20px;margin-top:26px;background:linear-gradient(180deg, rgba(160,32,240,.05), transparent 35%)}
     .anchor{scroll-margin-top:90px}
   </style>
 </head>
 <body>
-
   <!-- NAV -->
-  <header class="nav">
+  <header class="nav" role="navigation" aria-label="Primary">
     <div class="nav-inner">
       <div class="brand">
-        <!-- 로고 파일명에 공백이 있으므로 URL 인코딩 사용 -->
-        <img src="black-mandu.svg" alt="MANDU Logo" />
+        <img src="/black-mandu.svg" alt="MANDU logo" />
         <span>MANDU</span>
       </div>
       <nav class="menu">
@@ -139,26 +107,22 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1 class="title">Utility Token for Real-World<br/>Payments</h1>
-      <p class="subtitle">Built by NOVA LAB on BNB Smart Chain · Simple, inclusive, borderless.</p>
+      <h1 class="title">Utility Token for Real-World Payments</h1>
+      <p class="subtitle">Developed by NOVA LAB on BNB Smart Chain. Public information and links are provided below.</p>
       <div class="cta">
         <a class="btn btn-grad" href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" target="_blank" rel="noopener">View on BscScan</a>
-        <a class="btn btn-ghost" href="./whitepaper.html" target="_blank" rel="noopener">Read Whitepaper</a>
+        <a class="btn btn-ghost" href="/whitepaper.html" target="_blank" rel="noopener">Read Whitepaper</a>
         <a class="btn btn-ghost" href="https://x.com/MANDUCOINBNB" target="_blank" rel="noopener">Follow on X</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTENT -->
   <main class="container">
-
     <section id="about" class="section anchor">
       <div class="card">
         <h2>About MANDU</h2>
         <p style="color:var(--muted);margin:0">
-          MANDU is a BEP-20 utility token powering NOVA LAB’s ecosystem: <b>UB Pay</b> (biometric payment rails),
-          <b>Mandu Messenger</b> (social + rewards), and partner merchants. Our goal is to make digital transactions
-          as easy and rewarding as sharing dumplings — simple, inclusive, and borderless.
+          MANDU is a BEP-20 utility token in the NOVA LAB ecosystem. The project focuses on payment and rewards use-cases with planned integration to UB Pay (biometric payment) and Mandu Messenger. This site provides neutral, verifiable information for users and reviewers.
         </p>
       </div>
     </section>
@@ -178,11 +142,11 @@
         <div class="card">
           <h2>Utility</h2>
           <ul>
-            <li>Payments & transfers via <b>UB Pay</b></li>
-            <li>In-app purchases, gifts, loyalty rewards</li>
+            <li>Payments and transfers (via UB Pay; planned)</li>
+            <li>In-app purchases and rewards (Mandu Messenger; planned)</li>
             <li>Merchant programs & community incentives</li>
-            <li>Future: NFT & DAO integrations</li>
           </ul>
+          <small style="color:var(--muted)">No investment return is promised. This token is intended for utility within the ecosystem.</small>
         </div>
       </div>
     </section>
@@ -191,9 +155,9 @@
       <div class="card">
         <h2>Whitepaper</h2>
         <p style="color:var(--muted);margin:0 0 14px">
-          Read the public whitepaper for vision, token design, and roadmap.
+          Public whitepaper describing the project scope, token design and roadmap.
         </p>
-        <a class="btn btn-grad" href="./whitepaper.html" target="_blank" rel="noopener">Open Whitepaper</a>
+        <a class="btn btn-grad" href="/whitepaper.html" target="_blank" rel="noopener">Open Whitepaper</a>
       </div>
     </section>
 
@@ -204,29 +168,26 @@
           <ul>
             <li><a class="link" href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" target="_blank" rel="noopener">BscScan (MANDU)</a></li>
             <li><a class="link" href="https://x.com/MANDUCOINBNB" target="_blank" rel="noopener">X (Twitter)</a></li>
-            <li><a class="link" href="mailto:contact@nobalab2023.com">Contact Email</a></li>
-            <li><a class="link" href="./whitepaper.html" target="_blank" rel="noopener">Whitepaper</a></li>
+            <li><a class="link" href="mailto:contact@nobalab2023.com">contact@nobalab2023.com</a></li>
+            <li><a class="link" href="https://github.com/nobalab2023/mandu-website" target="_blank" rel="noopener">GitHub Repository</a></li>
           </ul>
         </div>
         <div class="card">
           <h2>Contract Source</h2>
-          <p style="color:var(--muted);margin:0 0 10px">Verified on BscScan. Review the code and audits as they are published.</p>
+          <p style="color:var(--muted);margin:0 0 10px">Verified on BscScan.</p>
           <a class="btn btn-ghost" href="https://bscscan.com/address/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036#code" target="_blank" rel="noopener">View Source</a>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>© <span id="y"></span> NOVA LAB. All rights reserved.</div>
-      <div>Built with ❤️ · MANDU on BNB Smart Chain</div>
+      <div>MANDU on BNB Smart Chain</div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
