@@ -2,181 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>MANDU Whitepaper · NOVA LAB</title>
+  <title>MANDU Official Whitepaper · NOVA LAB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official whitepaper including vision, tokenomics, roadmap, and transparency policy." />
+  <meta name="description" content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official web whitepaper with tokenomics, roadmap, transparency, and governance." />
+  <meta property="og:title" content="MANDU Official Whitepaper · NOVA LAB" />
+  <meta property="og:description" content="Utility token for real-world payments. Tokenomics, roadmap, transparency and governance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.novalab2023.com/whitepaper.html" />
+  <meta property="og:image" content="./mandu.png" />
+  <!-- 혼합 콘텐츠 자동 업그레이드 -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <script>if(location.protocol==='http:'){location.replace('https:'+location.href.slice(5))}</script>
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#0E0A1F; --card:#141226;
-      --grad:linear-gradient(90deg,#FF2DA3 0%,#8B5CF6 50%,#22D3EE 100%);
-      --text:#EDEAF7; --muted:#BFB8D9; --line:rgba(255,255,255,.1);
-      --radius:18px; --shadow:0 14px 36px rgba(0,0,0,.45);
+      --bg:#0b0b0e; --card:#13131a; --text:#f2f2fa; --muted:#b8b8c9; --line:rgba(255,255,255,.09);
+      --grad:linear-gradient(90deg,#ff6a6a 0%,#c43baf 45%,#7b2aef 100%);
+      --accent:#caa6ff; --shadow:0 14px 36px rgba(0,0,0,.45); --radius:18px;
+      --ok:#39d98a; --warn:#f6a742; --red:#ff6279;
     }
-    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-    a{color:#A78BFA;text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:auto;padding:24px 18px}
-    h1,h2{font-weight:800;line-height:1.2}
-    h2{margin-top:48px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero{padding:80px 18px 40px;text-align:center;background:
-      radial-gradient(900px 400px at 10% 0%,rgba(255,45,163,.12),transparent 60%),
-      radial-gradient(900px 500px at 90% 20%,rgba(139,92,246,.12),transparent 70%)}
-    .title{font-size:clamp(36px,6vw,64px);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0}
-    .subtitle{color:var(--muted);font-size:18px;margin-top:12px}
-    section{margin-bottom:60px}
-    p{color:var(--text);font-size:16px}
-    ul{color:var(--muted);font-size:15px}
-    table{width:100%;border-collapse:collapse;margin-top:12px}
-    th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left}
-    th{color:#EDEAF7}
-    td{color:#DAD5E6}
-    .note{color:var(--muted);font-size:14px;margin-top:8px}
-    .divider{height:1px;background:var(--line);margin:40px 0}
-    .btn-download{
-      display:inline-block;margin-top:30px;background:var(--grad);border:none;
-      color:#111;padding:14px 28px;border-radius:14px;font-weight:700;font-size:16px;
-      cursor:pointer;transition:.15s ease;box-shadow:var(--shadow);
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif; color:var(--text);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(196,59,175,.16), transparent 60%),
+        radial-gradient(1100px 600px at 90% 15%, rgba(123,42,239,.14), transparent 65%),
+        var(--bg);
     }
-    .btn-download:hover{opacity:.9;transform:translateY(-2px)}
-    footer{border-top:1px solid var(--line);padding:28px 18px;color:var(--muted);text-align:center}
-  </style>
-</head>
+    a{color:var(--accent); text-decoration:none} a:hover{text-decoration:underline}
 
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:10; backdrop-filter:blur(8px) saturate(120%); background:rgba(10,10,12,.55); border-bottom:1px solid var(--line)}
+    .nav-inner{max-width:1100px; margin:auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; gap:12px; align-items:center; font-weight:800}
+    .brand img{width:32px; height:32px; filter:drop-shadow(0 0 10px rgba(123,42,239,.35))}
+    .menu{display:flex; gap:16px; font-weight:600}
+    .menu a{color:var(--muted)} .menu a:hover{color:#fff}
+
+    /* HERO */
+    .hero{padding:64px 18px 32px; border-bottom:1px solid var(--line);}
+    .container{max-width:1100px; margin:auto}
+    .title{font-size:clamp(30px,5.4vw,60px); line-height:1.05; margin:10px 0 8px; font-weight:800;
+      background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .subtitle{color:var(--muted)}
+    .kpi{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px}
+    @media(min-width:720px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
+    .kpi .box{border:1px solid var(--line); border-radius:14px; padding:14px 12px; text-align:center}
+    .kpi .v{font-weight:800}
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{appearance:none; border:none; border-radius:14px; padding:12px 16px; font-weight:700; cursor:pointer; box-shadow:var(--shadow); transition:.15s}
+    .btn-grad{background:var(--grad); color:#111}
+    .btn-ghost{background:transparent; color:#fff; border:1px solid var(--line)}
+    .btn:hover{transform:translateY(-1px)}
+
+    /* BODY */
+    .wp{padding:24px 18px}
+    .grid{display:grid; gap:18px}
+    .two{grid-template-columns:1fr} @media(min-width:980px){ .two{grid-template-columns:1fr 1fr} }
+    .card{background:linear-gradient(180deg, rgba(19,19,26,.88), rgba(15,15,21,.78)); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .card h2{margin:0 0 10px; font-size:22px}
+    .lead{color:var(--muted)}
+    .mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+    .divider{height:1px; background:var(--line); margin:14px 0}
+
+    table{width:100%; border-collapse:collapse}
+    th,td{padding:10px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
+    th{color:#e8e8ff; font-size:14px} td{color:#ddd}
+    .pct{font-weight:800}
+    .tag{display:inline-block; padding:4px 8px; border:1px solid var(--line); border-radius:999px; color:#e8e8ff; font-size:12px; margin-right:6px}
+    .ok{color:#39d98a} .warn{color:#f6a742} .bad{color:#ff6279}
+
+    /* FOOTER + PRINT */
+    footer{border-top:1px solid var(--line); padding:24px 18px; color:var(--muted); margin-top:26px}
+    .printbar{position:sticky; bottom:16px; display:flex; justify-content:center}
+    .printbtn{backdrop-filter:blur(6px); background:rgba(10,10,12,.6); border:1px solid var(--line); color:#fff; border-radius:12px; padding:10px 14px; cursor:pointer}
+
+    @media print{
+      .nav,.printbar,.actions{display:none !important}
+      body{background:#fff !important; color:#000 !important}
+      .card{box-shadow:none; border-color:#eee; background:#fff}
+      a[href]:after{content:""}
+      .title{color:#000 !important; -webkit-text-fill-color:initial !important; background:none !important}
+    }
+  </style>
+  <script>
+    // HTTP → HTTPS 강제 (페이지 레벨)
+    if (location.protocol === 'http:') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+</head>
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="./black-mandu.svg" alt="MANDU logo" />
+        <span>MANDU · NOVA LAB</span>
+      </div>
+      <nav class="menu">
+        <a href="#abstract">Abstract</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#transparency">Transparency</a>
+        <a href="#governance">Governance</a>
+        <a href="#risks">Risks</a>
+      </nav>
+    </div>
+  </header>
+
   <section class="hero">
-    <h1 class="title">MANDU Whitepaper</h1>
-    <p class="subtitle">Utility Token for Real-World Payments · Built by NOVA LAB (Tokyo, Japan)</p>
+    <div class="container">
+      <h1 class="title">MANDU Official Whitepaper</h1>
+      <p class="subtitle">Utility token for real-world payments · Built by NOVA LAB on BNB Smart Chain</p>
+
+      <div class="actions">
+        <a class="btn btn-grad" href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" target="_blank" rel="noopener">View on BscScan</a>
+        <button class="btn btn-ghost" onclick="window.print()">Save as PDF</button>
+        <a class="btn btn-ghost" href="./whitepaper.pdf" target="_blank" rel="noopener">Download PDF (static)</a>
+        <a class="btn btn-ghost" href="./index.html">← Back</a>
+      </div>
+
+      <div class="kpi">
+        <div class="box"><div class="v">BEP-20</div><div class="subtitle">Standard</div></div>
+        <div class="box"><div class="v">80,000,000</div><div class="subtitle">Total Supply</div></div>
+        <div class="box"><div class="v mono">0x685a...8036</div><div class="subtitle">Contract</div></div>
+        <div class="box"><div class="v">NOVA LAB</div><div class="subtitle">Issuer</div></div>
+      </div>
+    </div>
   </section>
 
-  <main class="container">
-    <section id="1">
-      <h2>1. Introduction</h2>
-      <p>
-        MANDU is a BEP-20 utility token developed by NOVA LAB on the BNB Smart Chain.
-        It bridges the gap between communication, payments, and blockchain through a unified ecosystem —
-        Mandu Messenger and UB Pay mobile payment. The goal is to make digital transactions
-        <b>simple, inclusive, and borderless</b>.
-      </p>
-    </section>
+  <main class="wp container">
 
-    <section id="2">
-      <h2>2. Vision & Philosophy</h2>
-      <p>
-        MANDU’s philosophy is to connect the digital and physical economy through convenience and transparency.
-        Within Mandu Messenger, users can send tokens, gift friends, shop, and engage in community commerce.
-        UB Pay enables real-world transactions — paying with fiat while earning MANDU-based rewards.
-        The project envisions a seamless bridge between crypto assets and everyday life.
-      </p>
-    </section>
-
-    <section id="3">
-      <h2>3. Market Context</h2>
-      <p>
-        Current mobile payment systems remain device-dependent and fragmented.
-        Japan’s fintech market is entering rapid growth, while Korea already holds a mature digital economy.
-        NOVA LAB leverages its cross-border presence to become the
-        <b>bridge between Japan and Korea’s fintech evolution</b>, positioning MANDU as a gateway for the Asia-Pacific crypto economy.
-      </p>
-    </section>
-
-    <section id="4">
-      <h2>4. Ecosystem Overview</h2>
-      <ul>
-        <li><b>MANDU Token:</b> Core currency used across messenger, marketplace, and UB Pay reward conversions.</li>
-        <li><b>Mandu Messenger:</b> In-app wallet, P2P transfer, and token-based gifting system.</li>
-        <li><b>UB Pay:</b> Merchant payment gateway allowing fiat settlement; part of the fee returns as MANDU reward points.</li>
-        <li><b>MANDU Guard Pool:</b> 15% of total fee revenue reserved for price stability; another 15% burned automatically.</li>
-      </ul>
-    </section>
-
-    <section id="5">
-      <h2>5. Tokenomics</h2>
-      <table>
-        <thead><tr><th>Category</th><th>Percentage</th><th>Purpose</th></tr></thead>
-        <tbody>
-          <tr><td>Team & Founders</td><td>30%</td><td>Core development and operational incentives (12–24 mo vesting)</td></tr>
-          <tr><td>Marketing & Partnerships</td><td>10%</td><td>Branding, community building, and collaborations</td></tr>
-          <tr><td>Reserve / Treasury</td><td>10%</td><td>Future development fund and governance reserve</td></tr>
-          <tr><td>Liquidity & Exchange</td><td>40%</td><td>PancakeSwap liquidity pool creation and maintenance</td></tr>
-          <tr><td>Advisors / Compliance</td><td>5%</td><td>Legal, audit, and advisory support (12 mo vesting)</td></tr>
-          <tr><td>Public Sale</td><td>5%</td><td>Future investor/public allocation</td></tr>
-        </tbody>
-      </table>
-      <p class="note">Total Supply: 80,000,000 MANDU (Expandable via phased issuance model)</p>
-    </section>
-
-    <section id="6">
-      <h2>6. Technical Architecture</h2>
-      <p>
-        MANDU operates on a hybrid infrastructure. Inside Mandu Messenger, token balances move off-chain for instant UX.
-        Actual blockchain transfers occur only when users withdraw to their personal wallet,
-        verified via the official NOVA LAB treasury wallet. UB Pay functions as a fiat payment layer linked to the messenger.
-        Personal data and blockchain data remain encrypted and isolated, following Japan’s APPI and Korea’s PIPA regulations.
-      </p>
-    </section>
-
-    <section id="7">
-      <h2>7. Development Roadmap</h2>
-      <table>
-        <thead><tr><th>Phase</th><th>Period</th><th>Goal</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>Phase 1 — Token Launch</td><td>Q4 2025</td><td>Token deployment, BscScan verification, official website</td><td>Live</td></tr>
-          <tr><td>Phase 2 — Community & Branding</td><td>Q1–Q2 2026</td><td>Marketing, partnerships, user expansion</td><td>Planned</td></tr>
-          <tr><td>Phase 3 — Messenger Launch</td><td>Q4 2026</td><td>P2P features, UI/UX finalization</td><td>Planned</td></tr>
-          <tr><td>Phase 4 — UB Pay Integration</td><td>Q3–Q4 2027</td><td>Merchant settlement and reward system</td><td>Planned</td></tr>
-          <tr><td>Phase 5 — DAO Governance</td><td>2028+</td><td>Community voting and decentralized treasury</td><td>Planned</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="8">
-      <h2>8. Transparency & Governance</h2>
-      <ul>
-        <li>All company-held tokens are locked and released gradually; addresses and transactions are published publicly.</li>
-        <li>Monthly reports include token movements, expenses, and milestone progress.</li>
-        <li>Community feedback is collected before any issuance or policy change; final decisions are disclosed by NOVA LAB.</li>
-        <li>Future staking members within the Messenger will gain voting rights for DAO participation.</li>
-      </ul>
-    </section>
-
-    <section id="9">
-      <h2>9. Risk & Compliance</h2>
-      <ul>
-        <li>MANDU is a <b>utility token</b>, not a security; no profit rights or ownership claims.</li>
-        <li>All descriptions remain factual per BscScan submission policy to avoid misleading claims.</li>
-        <li>Security audits will precede major releases; no raw biometric data is stored.</li>
-        <li>MANDU Guard Pool mitigates market volatility and supports token stability.</li>
-      </ul>
-    </section>
-
-    <section id="10">
-      <h2>10. Disclaimer</h2>
-      <p>
-        Participation in the MANDU ecosystem implies acknowledgment that this project is not an investment vehicle.
-        NOVA LAB makes no guarantee of token value or liquidity.
-        Users are responsible for complying with their local financial regulations and tax laws.
-        The whitepaper may evolve with regulatory or technological developments, and all revisions will be publicly logged.
+    <!-- 1. Abstract -->
+    <section id="abstract" class="card">
+      <h2>1) Abstract</h2>
+      <p class="lead">
+        MANDU is a BEP-20 utility token developed by NOVA LAB (Tokyo, Japan) to bridge communication, payment, and blockchain into one unified ecosystem.
+        Within the Mandu Messenger, users can send, gift, and shop using MANDU tokens, while UB Pay enables real-world payments through fiat currency and provides MANDU rewards.
+        The goal is to seamlessly connect crypto with daily life — making digital currency simple, inclusive, and borderless.
       </p>
       <div class="divider"></div>
-      <center>
-        <a href="./MANDU_Whitepaper_EN.pdf" download>
-          <button class="btn-download">📥 Download Full PDF Version</button>
-        </a>
-      </center>
+      <p class="subtitle">Version 1.0 · Last Updated: <span id="updated"></span></p>
+    </section>
+
+    <!-- 2–4 -->
+    <section class="grid two">
+      <article class="card">
+        <h2>2) Vision & Philosophy</h2>
+        <p class="lead">
+          MANDU aims to be a token used naturally in everyday life — not just held for speculation. Users can interact, purchase, and exchange value within the messenger.
+          UB Pay allows real-world payments in fiat while rewarding users with MANDU tokens. Through this structure, MANDU realizes the concept that “the crypto economy = the real economy.”
+        </p>
+      </article>
+      <article class="card">
+        <h2>3) Market Context & Opportunity</h2>
+        <p class="lead">
+          Today’s mobile payment systems are fragmented and device-dependent.
+          NOVA LAB, a Korean company operating in Japan, is positioned as a cross-border bridge between the two markets, giving MANDU strong potential in Japan–Korea fintech cooperation.
+        </p>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>4) Ecosystem Structure</h2>
+        <ul class="lead">
+          <li><b>MANDU Token:</b> The core asset powering the messenger, marketplace, and UB Pay reward conversion.</li>
+          <li><b>Mandu Messenger:</b> Integrated wallet, P2P transfers, token gifting, and community commerce.</li>
+          <li><b>UB Pay:</b> Merchant payment system that processes fiat transactions and converts part of merchant fees into MANDU rewards.</li>
+          <li><b>MANDU Guard Pool:</b> 15% of collected fees are burned; another 15% are allocated to a stabilization reserve.</li>
+        </ul>
+      </article>
+
+      <article id="tokenomics" class="card">
+        <h2>5) Tokenomics</h2>
+        <table>
+          <thead><tr><th>Category</th><th>Allocation</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><b>Team & Founders</b></td><td class="pct">30%</td><td>Core development & operational incentives (12–24 mo vesting)</td></tr>
+            <tr><td><b>Marketing & Partnerships</b></td><td class="pct">10%</td><td>Branding, community expansion, collaborations</td></tr>
+            <tr><td><b>Reserve / Treasury</b></td><td class="pct">10%</td><td>Future development, contingency funds</td></tr>
+            <tr><td><b>Liquidity & Exchange</b></td><td class="pct">40%</td><td>PancakeSwap / DEX liquidity pools</td></tr>
+            <tr><td><b>Advisors / Compliance</b></td><td class="pct">5%</td><td>Legal, audit, and technical advisory (12 mo vesting)</td></tr>
+            <tr><td><b>Public Sale</b></td><td class="pct">5%</td><td>Future investor or community sale allocation</td></tr>
+          </tbody>
+        </table>
+        <p class="subtitle">Total Supply: <b>80,000,000 MANDU</b></p>
+      </article>
+    </section>
+
+    <!-- 6 -->
+    <section class="card">
+      <h2>6) Technical Architecture</h2>
+      <p class="lead">
+        MANDU operates on a hybrid on/off-chain infrastructure. Inside the messenger, token balances move off-chain for instant UX;
+        actual blockchain transfers occur when users withdraw to external wallets from NOVA LAB’s treasury. UB Pay serves as the fiat-payment
+        layer synchronized with messenger accounts. Personal and transaction data are encrypted and isolated, compliant with Japan’s APPI and Korea’s PIPA.
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section id="roadmap" class="card">
+      <h2>7) Roadmap</h2>
+      <table>
+        <thead><tr><th>Phase</th><th>Period</th><th>Milestone</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><b>Phase 1 — Token Launch</b></td><td>Q4 2025</td><td>Token deployment, BscScan verification, official website</td><td class="ok">✅ Live</td></tr>
+          <tr><td><b>Phase 2 — Community & Branding</b></td><td>Q1–Q2 2026</td><td>SNS expansion, partnerships, marketing initiatives</td><td>Planned</td></tr>
+          <tr><td><b>Phase 3 — Messenger Launch</b></td><td>Q4 2026</td><td>P2P features, UX optimization</td><td>Planned</td></tr>
+          <tr><td><b>Phase 4 — UB Pay Integration</b></td><td>Q3–Q4 2027</td><td>Merchant settlement, reward system</td><td>Planned</td></tr>
+          <tr><td><b>Phase 5 — DAO Governance</b></td><td>2028 +</td><td>Decentralized voting and treasury management</td><td>Planned</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 8–9 -->
+    <section id="transparency" class="grid two">
+      <article class="card">
+        <h2>8) Transparency</h2>
+        <ul class="lead">
+          <li>Company-held tokens are locked and released gradually; wallet addresses and TX hashes are public.</li>
+          <li>Monthly reports disclose token movements, expenses, and development progress.</li>
+          <li>LP lock proof and renewals are announced in advance with links.</li>
+          <li>Change log records all updates to the whitepaper, website, and contracts.</li>
+        </ul>
+      </article>
+
+      <article id="governance" class="card">
+        <h2>9) Governance</h2>
+        <ul class="lead">
+          <li>Community proposals are reviewed before any new issuance or policy changes.</li>
+          <li>Future staking participants in the messenger will obtain DAO voting rights.</li>
+          <li>NOVA LAB discloses decisions and rationales publicly for major changes.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- 10 -->
+    <section id="risks" class="card">
+      <h2>10) Risk & Compliance · Disclaimer</h2>
+      <ul class="lead">
+        <li>MANDU is a utility token, not a security or investment product. No guarantee of price or liquidity.</li>
+        <li>Security audits precede major updates; no raw biometric data is stored.</li>
+        <li>The MANDU Guard Pool acts as a stabilization mechanism to mitigate volatility.</li>
+        <li>This document does not constitute investment solicitation; participants must comply with local laws.</li>
+        <li>The whitepaper may be updated for technological/regulatory changes; revisions are publicly logged.</li>
+      </ul>
+    </section>
+
+    <!-- Changelog / Contacts -->
+    <section class="card">
+      <h2>Change Log</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Version</th><th>Changes</th></tr></thead>
+        <tbody>
+          <tr><td id="updated2"></td><td>v1.0</td><td>Initial official English whitepaper. Tokenomics, roadmap, transparency, and guard-pool note added.</td></tr>
+        </tbody>
+      </table>
+      <div class="divider"></div>
+      <p class="lead">Contact: <a href="mailto:contact@novalab2023.com">contact@novalab2023.com</a> · X: <a target="_blank" rel="noopener" href="https://x.com/MANDUCOINBNB">@MANDUCOINBNB</a></p>
     </section>
   </main>
 
+  <div class="printbar">
+    <button class="printbtn" onclick="window.print()">🖨️ Save as PDF</button>
+  </div>
+
   <footer>
-    © <span id="yy"></span> NOVA LAB · MANDU Token on BNB Smart Chain · All Rights Reserved
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="yy"></span> NOVA LAB — MANDU Token on BNB Smart Chain</div>
+      <div class="mono">Contract: 0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036</div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('yy').textContent = new Date().getFullYear();
+    const d=new Date(); const y=d.getFullYear(); const stamp=d.toISOString().slice(0,10);
+    document.getElementById('yy').textContent=y;
+    document.getElementById('updated').textContent=stamp;
+    document.getElementById('updated2').textContent=stamp;
   </script>
 </body>
 </html>
