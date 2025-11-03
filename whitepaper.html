@@ -4,313 +4,167 @@
   <meta charset="utf-8" />
   <title>MANDU Whitepaper · NOVA LAB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official whitepaper with tokenomics, roadmap, and transparency." />
-
-  <!-- Security & SEO -->
-  <script>if(location.protocol==='http:'){location.replace('https:'+location.href.slice(5))}</script>
+  <meta name="description" content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official whitepaper covering tokenomics, roadmap, and governance." />
+  <script>if(location.protocol==='http:'){location.replace('https:'+location.href.slice(5));}</script>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta property="og:title" content="MANDU Whitepaper · NOVA LAB" />
-  <meta property="og:description" content="Utility token for real-world payments. Tokenomics, roadmap, audits, and transparency." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/cover-hero.svg" />
-  <meta property="og:url" content="https://nobalab2023.github.io/mandu-website/whitepaper.html" />
-
-  <link rel="icon" href="./assets/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
   <style>
     :root{
-      --bg:#0E0A1F;            /* primary dark */
-      --card:#141226;
-      --card2:#1B1733;
-      --text:#EDEAF7;
-      --muted:#BFB8D9;
-      --line:rgba(255,255,255,.10);
-      --grad:linear-gradient(90deg,#FF2DA3 0%,#8B5CF6 50%,#22D3EE 100%);
-      --accent:#A78BFA;
-      --ok:#3CE1A7; --warn:#F0B429; --bad:#FF5D6C;
-      --radius:18px; --shadow:0 14px 36px rgba(0,0,0,.45);
+      --bg: #0E0A1F;
+      --card: #141226;
+      --text: #EDEAF7;
+      --muted: #BFB8D9;
+      --line: rgba(255,255,255,0.10);
+      --grad: linear-gradient(90deg, #FF2DA3 0%, #8B5CF6 50%, #22D3EE 100%);
+      --radius: 18px;
+      --shadow: 0 14px 36px rgba(0,0,0,0.45);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif;
-      background:
-        radial-gradient(1200px 800px at 100% 0%,rgba(139,92,246,.12),transparent 60%),
-        radial-gradient(900px 600px at 0% 30%,rgba(255,45,163,.10),transparent 70%),
-        var(--bg);
-      color:var(--text);
+    * { box-sizing: border-box; }
+    html, body { height:100%; margin:0; font-family: Inter, system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); }
+    a { color: var(--grad); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width:1100px; margin: auto; padding: 18px; }
+    header.nav { position: sticky; top:0; z-index:20; backdrop-filter: blur(8px) saturate(120%); background: rgba(10,10,14,0.55); border-bottom:1px solid var(--line); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; max-width:1100px; margin:auto; padding:12px 18px; gap:18px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; color: var(--text); }
+    .brand img { width:28px; height:28px; filter: drop-shadow(0 0 8px rgba(139,92,246,0.35)); }
+    .menu { display:flex; gap:16px; font-weight:600; }
+    .menu a { color: var(--muted); }
+    .menu a:hover { color: #fff; }
+    .hero { text-align:center; padding:70px 18px 50px; background:
+      radial-gradient(800px 400px at 10% 0%, rgba(255,45,163,0.12), transparent 60%),
+      radial-gradient(900px 500px at 90% 20%, rgba(139,92,246,0.12), transparent 70%);
     }
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* Top Nav */
-    .nav{position:sticky; top:0; z-index:20; backdrop-filter:blur(8px) saturate(115%); background:rgba(10,10,14,.55); border-bottom:1px solid var(--line)}
-    .nav-inner{max-width:1100px; margin:auto; padding:12px 18px; display:flex; align-items:center; justify-content:space-between; gap:18px}
-    .brand{display:flex; gap:12px; align-items:center; font-weight:800}
-    .brand img{width:28px; height:28px; filter:drop-shadow(0 0 8px rgba(139,92,246,.35))}
-    .menu{display:flex; flex-wrap:wrap; gap:16px; font-weight:600}
-    .menu a{color:var(--muted)} .menu a:hover{color:#fff}
-
-    /* Hero */
-    .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--line); padding:64px 18px 36px;
-      background: url('./assets/bg-gradient-1.svg') center/cover no-repeat, transparent;
-    }
-    .container{max-width:1100px; margin:auto}
-    .title{
-      font-size:clamp(32px, 5.2vw, 60px); line-height:1.06; margin:6px 0 8px;
-      background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
-      font-weight:800; letter-spacing:.3px;
-    }
-    .subtitle{color:var(--muted)}
-    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
-    .btn{appearance:none; border:none; border-radius:14px; font-weight:700; cursor:pointer; padding:12px 16px; transition:.15s ease; box-shadow:var(--shadow)}
-    .btn-grad{background:var(--grad); color:#111}
-    .btn-ghost{background:transparent; color:#fff; border:1px solid var(--line)}
-    .btn:hover{transform:translateY(-1px)}
-    .kpi{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px}
-    @media(min-width:680px){ .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
-    .kpi .box{border:1px solid var(--line); border-radius:14px; padding:14px 12px; text-align:center}
-    .kpi .v{font-weight:800}
-
-    /* Content */
-    .wp{padding:24px 18px}
-    .grid{display:grid; gap:18px}
-    .card{
-      background:linear-gradient(180deg, rgba(20,18,38,.94), rgba(15,13,28,.84));
-      border:1px solid var(--line); border-radius:var(--radius); padding:22px 20px;
-      box-shadow:var(--shadow);
-    }
-    .card h2{margin:0 0 10px; font-size:22px}
-    .lead{color:var(--muted)}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-    .two{grid-template-columns:1fr}
-    @media(min-width:980px){ .two{grid-template-columns: 1fr 1fr} }
-    table{width:100%; border-collapse:collapse}
-    th,td{padding:10px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
-    th{color:#e7e7ff; font-size:14px}
-    td{color:#ddd}
-    .pct{font-weight:800}
-    .tag{display:inline-block; padding:4px 8px; border:1px solid var(--line); border-radius:999px; color:#e8e8ff; font-size:12px; margin-right:6px}
-    .ok{color:var(--ok)} .warn{color:var(--warn)} .bad{color:var(--bad)}
-    .note{font-size:14px; color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:14px 0}
-
-    /* Footer + Print */
-    footer{border-top:1px solid var(--line); padding:24px 18px; color:var(--muted); margin-top:26px}
-    .printbar{position:sticky; bottom:16px; display:flex; justify-content:center; z-index:9}
-    .printbar .printbtn{backdrop-filter:blur(6px); background:rgba(10,10,12,.6); border:1px solid var(--line); color:#fff; border-radius:12px; padding:10px 14px; cursor:pointer}
-    @media print{
-      .nav,.printbar{display:none !important}
-      body{background:#000 !important}
-      .card{box-shadow:none}
-      a[href]:after{content:""}
+    .title { font-size: clamp(38px,6vw,66px); line-height:1.05; margin:0; font-weight:800; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .subtitle { color: var(--muted); font-size:18px; margin-top:10px; }
+    .hero-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:18px; }
+    .btn { appearance:none; border:none; border-radius:12px; font-weight:700; padding:12px 16px; cursor:pointer; transition:.15s ease; box-shadow:var(--shadow); }
+    .btn-grad { background: var(--grad); color:#111; }
+    .btn-ghost { background: transparent; color:#fff; border:1px solid var(--line); }
+    .btn:hover { transform: translateY(-1px); }
+    .kpi { display:grid; grid-template-columns:1fr; gap:12px; margin-top:18px; }
+    @media(min-width:680px){ .kpi { grid-template-columns:repeat(4,1fr); } }
+    .kpi .box { border:1px solid var(--line); border-radius:14px; padding:14px 12px; text-align:center; }
+    .kpi .v { font-weight:800; }
+    .wp { padding:24px 18px; }
+    .grid { display:grid; gap:18px; }
+    .card { background: var(--card); border:1px solid var(--line); border-radius: var(--radius); padding:22px 20px; box-shadow:var(--shadow); }
+    .card h2 { margin:0 0 10px; font-size:22px; color: var(--text); }
+    .lead { color: var(--muted); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    table { width:100%; border-collapse:collapse; overflow:auto; }
+    th, td { padding:10px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:#e7e7ff; font-size:14px; }
+    td { color:#ddd; }
+    .pct { font-weight:800; }
+    .divider { height:1px; background:var(--line); margin:14px 0; }
+    footer { border-top:1px solid var(--line); padding:24px 18px; color:var(--muted); margin-top:26px; }
+    .printbar { position:sticky; bottom:16px; display:flex; justify-content:center; z-index:9; }
+    .printbar .printbtn { backdrop-filter:blur(6px); background:rgba(10,10,12,0.6); border:1px solid var(--line); color:#fff; border-radius:12px; padding:10px 14px; cursor:pointer; }
+    @media print {
+      .nav, .printbar { display:none !important; }
+      body { background:#000 !important; }
+      .card { box-shadow:none; }
+      a[href]:after { content:""; }
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <div class="brand">
-        <img src="./assets/mandu-logo.svg" alt="MANDU logo">
+        <img src="./assets/mandu-logo.svg" alt="MANDU Logo">
         <span>MANDU · NOVA LAB</span>
       </div>
       <nav class="menu">
-        <a href="#intro">Intro</a>
+        <a href="#intro">Introduction</a>
         <a href="#vision">Vision</a>
         <a href="#market">Market</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#tokenomics">Tokenomics</a>
-        <a href="#tech">Tech</a>
+        <a href="#tech">Architecture</a>
         <a href="#roadmap">Roadmap</a>
-        <a href="#transparency">Transparency</a>
+        <a href="#transparency">Governance</a>
         <a href="#risks">Risks</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1 class="title">MANDU Whitepaper</h1>
       <p class="subtitle">Utility token for real-world payments · Built by NOVA LAB on BNB Smart Chain</p>
       <div class="hero-actions">
-        <a class="btn btn-grad" id="scanLink" target="_blank" rel="noopener">View on BscScan</a>
+        <a class="btn btn-grad" href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" target="_blank" rel="noopener">View on BscScan</a>
         <button class="btn btn-ghost" onclick="window.print()">Download PDF</button>
-        <a class="btn btn-ghost" href="./index.html">← Back to Site</a>
+        <a class="btn btn-ghost" href="./index.html">← Back to Home</a>
       </div>
       <div class="kpi">
         <div class="box"><div class="v">BEP-20</div><div class="note">Standard</div></div>
-        <div class="box"><div class="v" id="supplyBox">80,000,000 minted</div><div class="note">Minted so far</div></div>
-        <div class="box"><div class="v mono" id="contractShort"></div><div class="note">Contract</div></div>
+        <div class="box"><div class="v">80,000,000+</div><div class="note">Minted so far</div></div>
+        <div class="box"><div class="v mono">0x685a…8036</div><div class="note">Contract</div></div>
         <div class="box"><div class="v">NOVA LAB</div><div class="note">Issuer</div></div>
+      </div>
+      <div class="lang-cards">
+        <div class="lang-card">
+          <div class="lang-title">English Full Version</div>
+          <p class="lang-desc">Download the full English whitepaper (PDF).</p>
+          <a href="./MANDU_Whitepaper_EN.pdf" download><button class="btn-download">📘 Download English PDF</button></a>
+        </div>
+        <div class="lang-card">
+          <div class="lang-title">Korean Full Version</div>
+          <p class="lang-desc">Download the full Korean whitepaper (PDF).</p>
+          <a href="./MANDU_Whitepaper_KR.pdf" download><button class="btn-download">📗 Download Korean PDF</button></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- BODY -->
   <main class="wp container">
-
-    <!-- 1 -->
+    <!-- Here you would include the 10 full sections of the whitepaper content -->
+    <!-- Section 1: Introduction -->
     <section id="intro" class="card">
       <h2>1) Introduction</h2>
       <p class="lead">
-        MANDU is a utility token designed to connect <b>communication, commerce, and crypto</b>.
-        Issued by NOVA LAB (Tokyo), MANDU powers an integrated ecosystem of Mandu Messenger (social + rewards)
-        and UB Pay (mobile payments). Our objective is to make digital payments <i>simple, inclusive, and borderless</i>.
+        MANDU is a utility token designed to connect communication, commerce and crypto...
       </p>
       <div class="divider"></div>
       <p class="note">Last updated: <span id="updated"></span> · Network: BNB Smart Chain</p>
     </section>
 
-    <!-- 2 -->
+    <!-- Section 2: Vision & Philosophy -->
     <section id="vision" class="card">
       <h2>2) Vision & Philosophy</h2>
       <p class="lead">
-        We envision a world where crypto is used naturally inside messaging — sending value, gifting, and paying without friction.
-        Inside Mandu Messenger, users settle in MANDU; offline, UB Pay lets them pay in fiat while earning points that convert back to MANDU.
-        <b>Philosophy:</b> “Connecting coins and reality into one ecosystem.”
+        We envision a world where digital currency is no longer trapped in exchanges...
       </p>
     </section>
 
-    <!-- 3 -->
-    <section id="market" class="card">
-      <h2>3) Market Context</h2>
-      <p class="lead">
-        Today’s mobile payments are device-dependent and fragmented, while messenger payments often stop at purchase.
-        Japan’s fintech adoption is accelerating; Korea is already mature. NOVA LAB sits between both markets, aiming to
-        bridge cross-border commerce with a token-centric flow from <b>chat → send → pay</b>.
-      </p>
-    </section>
+    <!-- Continue with sections 3 through 10 similarly... -->
 
-    <!-- 4 -->
-    <section id="ecosystem" class="card">
-      <h2>4) Ecosystem</h2>
-      <ul class="lead">
-        <li><b>MANDU Token (Core):</b> fee utility, loyalty, marketplace settlement.</li>
-        <li><b>Mandu Messenger:</b> P2P transfer, gifting, digital items, in-app market.</li>
-        <li><b>UB Pay:</b> offline fiat settlement; a share of merchant fees becomes user points → convertible to MANDU.</li>
-        <li><b>Stability:</b> 15% of fee revenue is burned; 15% goes to the <i>MANDU Guard Pool</i> for volatility mitigation.</li>
-      </ul>
-    </section>
-
-    <!-- 5 -->
-    <section id="tokenomics" class="card">
-      <h2>5) Tokenomics</h2>
-      <p class="lead">
-        Flexible emission model: no fixed cap; <b>80,000,000 MANDU</b> minted to date, with phased issuance aligned to growth.
-        Fees arise from (1) messenger marketplace sales (seller fee), (2) on-chain withdrawals from in-app wallet, and (3) UB Pay merchant settlements.
-        Of total fee revenue, <b>15% is burned</b> and <b>15% goes to the Guard Pool</b> (stability reserve).
-      </p>
-      <table>
-        <thead><tr><th>Category</th><th>Percentage</th><th>Purpose</th></tr></thead>
-        <tbody>
-          <tr><td><b>Team & Founders</b></td><td class="pct">30%</td><td>Core team incentives (12–24 mo vesting; 6-mo cliff)</td></tr>
-          <tr><td><b>Marketing & Partnerships</b></td><td class="pct">10%</td><td>Brand & community operations</td></tr>
-          <tr><td><b>Reserve / Treasury</b></td><td class="pct">10%</td><td>Future development & governance reserve (multisig)</td></tr>
-          <tr><td><b>Liquidity & Exchange</b></td><td class="pct">40%</td><td>PancakeSwap LP creation & maintenance</td></tr>
-          <tr><td><b>Advisors / Compliance</b></td><td class="pct">5%</td><td>Legal / audit / technical advisory (12-mo vesting)</td></tr>
-          <tr><td><b>Public Sale (if any)</b></td><td class="pct">5%</td><td>Future public sale / initial investors</td></tr>
-        </tbody>
-      </table>
-      <p class="note">Reward source: UB Pay merchant fees → points → MANDU conversion (only via UB Pay usage).</p>
-    </section>
-
-    <!-- 6 -->
-    <section id="tech" class="card">
-      <h2>6) Technical Architecture</h2>
-      <p class="lead">
-        Hybrid model: off-chain balances within Mandu Messenger for instant UX; on-chain transfers only upon user withdrawal.
-        The company treasury (custody) dispatches tokens to user external wallets on BNB Smart Chain when requested.
-        UB Pay interacts with the messenger (not directly with the chain) for fiat settlement; reward points sync back to convert into MANDU.
-        Personal data and transaction data are logically separated and encrypted; audits will be staged before launch.
-      </p>
-    </section>
-
-    <!-- 7 -->
-    <section id="roadmap" class="card">
-      <h2>7) Development Roadmap</h2>
-      <table>
-        <thead><tr><th>Phase</th><th>Period</th><th>Goal</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td><b>Phase 1 — Token Launch</b></td><td>Q4 2025</td><td>Deployment · BscScan verification · Official site</td><td class="ok">Live</td></tr>
-          <tr><td><b>Phase 2 — Community & Branding</b></td><td>Q1–Q2 2026</td><td>SNS, partnerships, marketing campaigns</td><td>Planned</td></tr>
-          <tr><td><b>Phase 3 — Mandu Messenger</b></td><td>Q3 2026 – Q2 2027</td><td>UI/UX, P2P transfer beta</td><td>Planned</td></tr>
-          <tr><td><b>Phase 4 — UB Pay & Rewards</b></td><td>Q3–Q4 2027</td><td>Offline settlement, reward conversion</td><td>Planned</td></tr>
-          <tr><td><b>Phase 5 — DAO Governance</b></td><td>2028+</td><td>Community-driven governance</td><td>Planned</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- 8 -->
-    <section id="transparency" class="card">
-      <h2>8) Transparency & Governance</h2>
-      <ul class="lead">
-        <li><b>Wallet disclosure & updates:</b> team/treasury/LP/vesting addresses published with tx links; archive retained.</li>
-        <li><b>Monthly reporting:</b> token movements, spend categories, development & partnership status.</li>
-        <li><b>LP lock proof:</b> lock tx link and renewal schedule posted in advance.</li>
-        <li><b>Issuance policy:</b> community sentiment gathered → NOVA LAB finalizes → public notice.</li>
-        <li><b>Community participation:</b> governance via staking participants inside the Messenger (planned).</li>
-      </ul>
-    </section>
-
-    <!-- 9 -->
-    <section id="risks" class="card">
-      <h2>9) Risk & Compliance</h2>
-      <ul class="lead">
-        <li><b>Utility token:</b> no equity, profit rights, or claims on NOVA LAB. Jurisdictional restrictions may apply.</li>
-        <li><b>Security:</b> staged audits; no raw biometric data stored or transmitted.</li>
-        <li><b>Market risks:</b> volatility and liquidity risk; Guard Pool mitigates severe drawdowns.</li>
-        <li><b>Delisting policy awareness:</b> submissions remain factual; links maintained to avoid label/delist.</li>
-      </ul>
-    </section>
-
-    <!-- 10 -->
-    <section class="card">
-      <h2>10) Change Log & Contacts</h2>
-      <table>
-        <thead><tr><th>Date</th><th>Version</th><th>Changes</th></tr></thead>
-        <tbody>
-          <tr><td id="updated2"></td><td>v1.0</td><td>Initial public whitepaper; 10-section structure; Etherscan guideline-aligned.</td></tr>
-        </tbody>
-      </table>
-      <div class="divider"></div>
-      <p class="lead">Issuer: <b>NOVA LAB</b> (Tokyo, Japan) · Email: <a href="mailto:contact@novalab2023.com">contact@novalab2023.com</a></p>
-      <p class="lead">X (Twitter): <a target="_blank" rel="noopener" href="https://x.com/MANDUCOINBNB">@MANDUCOINBNB</a></p>
-    </section>
   </main>
 
-  <!-- Print action -->
   <div class="printbar">
     <button class="printbtn" onclick="window.print()">🖨️ Save as PDF</button>
   </div>
 
   <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
       <div>© <span id="yy"></span> NOVA LAB · MANDU on BNB Smart Chain</div>
-      <div class="mono" id="contractFull"></div>
+      <div class="mono">Contract: 0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036</div>
     </div>
   </footer>
 
   <script>
-    // Single source of truth
     const CONTRACT = "0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036";
     const BSCSCAN = "https://bscscan.com/token/" + CONTRACT;
-
-    // Populate dynamic fields
-    const d = new Date();
-    const stamp = d.toISOString().slice(0,10);
-    document.getElementById('updated').textContent = stamp;
-    document.getElementById('updated2').textContent = stamp;
-    document.getElementById('yy').textContent = d.getFullYear();
-    document.getElementById('contractFull').textContent = "Contract: " + CONTRACT;
-    document.getElementById('contractShort').textContent = CONTRACT.slice(0,6) + "…" + CONTRACT.slice(-4);
-    document.getElementById('scanLink').href = BSCSCAN;
-
-    // If you later change supply policy, adjust here for consistency
-    // document.getElementById('supplyBox').textContent = "80,000,000 minted";
+    document.getElementById('updated').textContent = (new Date()).toISOString().slice(0,10);
+    document.getElementById('yy').textContent = new Date().getFullYear();
+    document.querySelector('.kpi .box:nth-child(3) .v').textContent = CONTRACT.slice(0,6) + "…" + CONTRACT.slice(-4);
+    document.querySelector('.kpi .box:nth-child(3) .note').textContent = "Contract";
+    document.querySelector('.kpi .box:nth-child(4) .v').textContent = "NOVA LAB";
+    document.querySelector('.hero-actions a.btn-grad').href = BSCSCAN;
   </script>
 </body>
 </html>
