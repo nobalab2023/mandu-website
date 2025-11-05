@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.novalab2023.com/whitepaper.html" />
   <meta property="og:image" content="./mandu.png" />
-  <!-- 혼합 콘텐츠 자동 업그레이드 -->
+  <!-- Mixed content auto-upgrade -->
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -87,7 +87,7 @@
     }
   </style>
   <script>
-    // HTTP → HTTPS 강제 (페이지 레벨)
+    // Force HTTP → HTTPS
     if (location.protocol === 'http:') {
       location.replace('https://' + location.host + location.pathname + location.search + location.hash);
     }
@@ -119,7 +119,8 @@
       <div class="actions">
         <a class="btn btn-grad" href="https://bscscan.com/token/0x685a2ff6Cb8aE62Fbc56d932A7C96ef605768036" target="_blank" rel="noopener">View on BscScan</a>
         <button class="btn btn-ghost" onclick="window.print()">Save as PDF</button>
-        <a class="btn btn-ghost" href="./whitepaper.pdf" target="_blank" rel="noopener">Download PDF (static)</a>
+        <!-- UPDATED: v1.1 static PDF -->
+        <a class="btn btn-ghost" href="./whitepaper.v1.1.pdf" target="_blank" rel="noopener">Download PDF (v1.1)</a>
         <a class="btn btn-ghost" href="./index.html">← Back</a>
       </div>
 
@@ -143,7 +144,8 @@
         The goal is to seamlessly connect crypto with daily life — making digital currency simple, inclusive, and borderless.
       </p>
       <div class="divider"></div>
-      <p class="subtitle">Version 1.0 · Last Updated: <span id="updated"></span></p>
+      <!-- UPDATED: version to v1.1 -->
+      <p class="subtitle">Version 1.1 · Last Updated: <span id="updated"></span></p>
     </section>
 
     <!-- 2–4 -->
@@ -175,20 +177,40 @@
         </ul>
       </article>
 
+      <!-- UPDATED: 5) Tokenomics -->
       <article id="tokenomics" class="card">
         <h2>5) Tokenomics</h2>
+        <p class="lead">
+          MANDU’s token allocation has been refined to strengthen liquidity, ensure sustainable growth, and support ecosystem expansion.
+        </p>
         <table>
           <thead><tr><th>Category</th><th>Allocation</th><th>Purpose</th></tr></thead>
           <tbody>
-            <tr><td><b>Team & Founders</b></td><td class="pct">30%</td><td>Core development & operational incentives (12–24 mo vesting)</td></tr>
-            <tr><td><b>Marketing & Partnerships</b></td><td class="pct">10%</td><td>Branding, community expansion, collaborations</td></tr>
-            <tr><td><b>Reserve / Treasury</b></td><td class="pct">10%</td><td>Future development, contingency funds</td></tr>
-            <tr><td><b>Liquidity & Exchange</b></td><td class="pct">40%</td><td>PancakeSwap / DEX liquidity pools</td></tr>
-            <tr><td><b>Advisors / Compliance</b></td><td class="pct">5%</td><td>Legal, audit, and technical advisory (12 mo vesting)</td></tr>
-            <tr><td><b>Public Sale</b></td><td class="pct">5%</td><td>Future investor or community sale allocation</td></tr>
+            <tr>
+              <td><b>Liquidity Pool</b></td>
+              <td class="pct">45%</td>
+              <td>Dedicated to PancakeSwap and other DEX liquidity pools to secure stable trading depth and market liquidity.</td>
+            </tr>
+            <tr>
+              <td><b>Treasury (Company Reserve)</b></td>
+              <td class="pct">30%</td>
+              <td>Long-term development, operations, and infrastructure expansion.<br><i>Lock-up:</i> 5-year schedule, released at <b>6% of total supply per year</b> (0% at TGE).</td>
+            </tr>
+            <tr>
+              <td><b>Initial Marketing & Funding</b></td>
+              <td class="pct">15%</td>
+              <td>Initial-stage marketing, promotional activities, and project funding — branding, partnerships, and exchange listing preparation.</td>
+            </tr>
+            <tr>
+              <td><b>Ecosystem Support Fund</b></td>
+              <td class="pct">10%</td>
+              <td>Developer grants, integration partners, and long-term ecosystem collaborations.</td>
+            </tr>
           </tbody>
         </table>
-        <p class="subtitle">Total Supply: <b>80,000,000 MANDU</b></p>
+        <p class="note">
+          Total Supply (minted to date): <b>80,000,000 MANDU</b>. Price stabilization is managed separately via the non-circulating <b>MANDU Guard Pool</b>.
+        </p>
       </article>
     </section>
 
@@ -251,13 +273,24 @@
       </ul>
     </section>
 
-    <!-- Changelog / Contacts -->
+    <!-- Change Log / Contacts -->
     <section class="card">
       <h2>Change Log</h2>
       <table>
         <thead><tr><th>Date</th><th>Version</th><th>Changes</th></tr></thead>
         <tbody>
-          <tr><td id="updated2"></td><td>v1.0</td><td>Initial official English whitepaper. Tokenomics, roadmap, transparency, and guard-pool note added.</td></tr>
+          <!-- NEW: v1.1 row -->
+          <tr>
+            <td id="updated2"></td>
+            <td>v1.1</td>
+            <td>Tokenomics updated to 45% Liquidity Pool, 30% Treasury (5-year lock @ 6%/yr), 15% Initial Marketing & Funding, 10% Ecosystem Support Fund. Download button points to <code>whitepaper.v1.1.pdf</code>.</td>
+          </tr>
+          <!-- Keep previous v1.0 row (date left as originally published) -->
+          <tr>
+            <td><!-- original date --></td>
+            <td>v1.0</td>
+            <td>Initial official English whitepaper.</td>
+          </tr>
         </tbody>
       </table>
       <div class="divider"></div>
@@ -280,6 +313,7 @@
     const d=new Date(); const y=d.getFullYear(); const stamp=d.toISOString().slice(0,10);
     document.getElementById('yy').textContent=y;
     document.getElementById('updated').textContent=stamp;
+    // If you want v1.1 date to be "today", keep this; otherwise set a fixed date string.
     document.getElementById('updated2').textContent=stamp;
   </script>
 </body>
