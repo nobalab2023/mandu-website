@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official project page, whitepaper, team, and brand assets (64x64 logo for Etherscan / wallets)."
+    content="MANDU is a BEP-20 utility token by NOVA LAB on BNB Smart Chain. Official project page, whitepaper, team, and brand assets (SVG & 64x64 PNG logo for Etherscan / wallets)."
   />
 
   <!-- Open Graph / Social -->
@@ -343,6 +343,7 @@
       grid-template-columns: auto 1fr;
       gap: 14px;
       align-items: center;
+      margin-bottom: 14px;
     }
 
     @media (max-width: 640px) {
@@ -511,7 +512,7 @@
               href="#assets"
               class="btn-secondary"
             >
-              Download 64×64 Logo
+              Download Logos
             </a>
           </div>
         </div>
@@ -548,14 +549,59 @@
 
       <hr class="divider" />
 
-      <!-- ASSETS SECTION: 여기에서 64x64 PNG 다운 가능 -->
+      <!-- ASSETS SECTION: SVG + 64x64 PNG 다운 -->
       <section id="assets" class="section">
-        <h2>Brand assets · 64×64 icon</h2>
+        <h2>Brand assets · SVG & 64×64 icon</h2>
         <p>
-          This icon is the official <strong>64×64 PNG</strong> logo for MANDU,
-          optimized for Etherscan, block explorers, wallets, and token lists.
+          Official logo assets for MANDU, optimized for explorers, wallets and
+          token lists. SVG is recommended for most interfaces, and the 64×64
+          PNG is provided for services that require a fixed-size raster icon.
         </p>
 
+        <!-- SVG ICON CARD -->
+        <div class="asset-card">
+          <div class="asset-icon-box">
+            <!-- SVG 프리뷰 (파일명 다르면 src 수정) -->
+            <img
+              src="./mandu.svg"
+              alt="MANDU SVG logo"
+              width="64"
+              height="64"
+            />
+          </div>
+          <div>
+            <div class="asset-main-line">
+              Official SVG logo (32×32 viewBox) for explorers &amp; wallets
+            </div>
+            <div class="asset-meta">
+              <div>
+                File: <code>mandu.svg</code> · Format: <code>SVG</code>
+              </div>
+              <div>
+                URL (GitHub Pages):
+                <code>https://www.novalab2023.com/mandu.svg</code>
+              </div>
+            </div>
+            <div class="asset-actions">
+              <a
+                href="./mandu.svg"
+                download="MANDU-logo.svg"
+                class="primary"
+              >
+                ⬇ Download SVG logo
+              </a>
+              <a
+                href="https://raw.githubusercontent.com/nobalab2023/mandu-website/main/mandu.svg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open raw SVG URL
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PNG 64×64 ICON CARD -->
         <div class="asset-card">
           <div class="asset-icon-box">
             <!-- 64x64 전용 로고 -->
@@ -596,7 +642,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Open raw image URL
+                Open raw PNG URL
               </a>
             </div>
           </div>
